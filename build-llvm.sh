@@ -20,10 +20,10 @@ rm -rf tmp/
 mkdir -p tmp/build
 mkdir -p download
 
-#wget "${SITE}/llvm-${LLVM_VERSION}.src.tar.xz" -P download/
-#wget "${SITE}/cfe-${LLVM_VERSION}.src.tar.xz" -P download/
-#wget "${SITE}/compiler-rt-${LLVM_VERSION}.src.tar.xz" -P download/
-#wget "${SITE}/clang-tools-extra-${LLVM_VERSION}.src.tar.xz" -P download/
+wget "${SITE}/llvm-${LLVM_VERSION}.src.tar.xz" -P download/
+wget "${SITE}/cfe-${LLVM_VERSION}.src.tar.xz" -P download/
+wget "${SITE}/compiler-rt-${LLVM_VERSION}.src.tar.xz" -P download/
+wget "${SITE}/clang-tools-extra-${LLVM_VERSION}.src.tar.xz" -P download/
 
 tar -ax -f download/llvm-${LLVM_VERSION}.src.tar.xz -C tmp/
 tar -ax -f download/cfe-${LLVM_VERSION}.src.tar.xz -C tmp/
