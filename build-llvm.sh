@@ -12,7 +12,9 @@
 
 set -o nounset                         # Treat unset variables as an error
 
-LLVM_VERSION="4.0.1"
+set -e
+
+LLVM_VERSION="$1"
 SITE="http://releases.llvm.org/${LLVM_VERSION}"
 CPUS=`cat /proc/cpuinfo  | grep -c processor`
 
@@ -36,5 +38,5 @@ mv tmp/compiler-rt-${LLVM_VERSION}.src tmp/llvm/projects/compiler-rt
 mv tmp/clang-tools-extra-${LLVM_VERSION}.src tmp/llvm/tools/clang/tools/extra
 
 cd tmp/build
-cmake ../llvm -DCMAKE_BUILD_TYPE=release -DDLLVM_TARGETS_TO_BUILD="x86_64"
+cmake ../llvm -DCMAKE_BUILD_TYPE=release -DLLVM_TARGETS_TO_BUILD="x86_64"
 make -j ${CPUS}
