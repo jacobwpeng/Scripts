@@ -38,5 +38,5 @@ mv tmp/compiler-rt-${LLVM_VERSION}.src tmp/llvm/projects/compiler-rt
 mv tmp/clang-tools-extra-${LLVM_VERSION}.src tmp/llvm/tools/clang/tools/extra
 
 cd tmp/build
-cmake ../llvm -DCMAKE_BUILD_TYPE=release -DLLVM_TARGETS_TO_BUILD="x86_64"
+cmake ../llvm -DCMAKE_BUILD_TYPE=release -DLLVM_TARGETS_TO_BUILD="X86"
 make -j ${CPUS}
